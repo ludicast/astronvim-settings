@@ -6,7 +6,7 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "lua_ls"
+        "lua_ls",
         "pyright",
         "bashls",
         "ansiblels",
