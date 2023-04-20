@@ -11,7 +11,7 @@ return {
         "bashls",
         "ansiblels",
         "rust_analyzer",
-        "tserver",
+        "tsserver",
       },
     },
   },
