@@ -52,6 +52,16 @@ return {
     servers = {
       -- "pyright"
     },
+    mappings = {
+      i = {
+        -- map C-\ to get new suggestion from copilot
+        ["<C-\\>"] = { "<Plug>(copilot-suggest)", desc = "copilot suggest" },
+        -- map C-> to get next suggestion from copilot
+        ["<C-p>"] = { "<Plug>(copilot-next)", desc = "copilot next" },
+        -- map C-< to get prev suggestion from copilot
+        ["<C-u>"] = { "<Plug>(copilot-previous)", desc = "copilot previous" },
+      },
+    },    
   },
 
   -- Configure require("lazy").setup() options
@@ -81,5 +91,7 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    local copilot_opts = { silent = true, expr = true, script = true }
+    vim.api.nvim_set_keymap("i", "<C-l>", "copilot#Accept(<Tab>)", copilot_opts)
   end,
 }
